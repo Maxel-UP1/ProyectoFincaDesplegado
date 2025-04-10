@@ -1,8 +1,15 @@
 import User from '../models/User.mjs';
 
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 export const welcome = (req, res) => {
-  res.send('API LISTA!');
+  res.sendFile(path.join(__dirname, '../view/login.html'));
 };
+
 
 export const loginUser = async (req, res) => {
   const { usuario, contraseña } = req.body;
