@@ -1,0 +1,13 @@
+{
+    "name": "salud-animal-service",
+    "version": "1.0.0",
+    "main": "serverSaludAnimal.js",
+    "scripts": {
+      "start": "node serverSaludAnimal.js"
+    },
+    "type": "module",
+    "dependencies": {
+      "express": "^5.1.0"
+    }
+  }
+  

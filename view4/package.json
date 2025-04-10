@@ -1,0 +1,13 @@
+{
+    "name": "reproduccion-service",
+    "version": "1.0.0",
+    "main": "serverReproduccion.js",
+    "scripts": {
+      "start": "node serverReproduccion.js"
+    },
+    "type": "module",
+    "dependencies": {
+      "express": "^5.1.0"
+    }
+  }
+  

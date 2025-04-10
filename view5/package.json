@@ -1,0 +1,15 @@
+{
+    "name": "estadisticas-service",
+    "version": "1.0.0",
+    "main": "serverEstadisticas.js",
+    "scripts": {
+      "start": "node serverEstadisticas.js"
+    },
+    "type": "module",
+    "dependencies": {
+      "dotenv": "^16.4.7",
+      "express": "^5.1.0",
+      "mongoose": "^8.13.2"
+    }
+  }
+  
