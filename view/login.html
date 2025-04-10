@@ -208,7 +208,7 @@
 
       if (res.ok) {
         // Redirigir al dashboard si las credenciales son correctas
-        window.location.href = 'http://localhost:8081/chivosList.html';
+        window.location.href = res.redirect('gestionanimal.com');
       } else {
         // Mostrar mensaje de error si las credenciales no coinciden
         mensajeDiv.textContent = 'Credenciales incorrectas. Por favor, inténtalo de nuevo.';
