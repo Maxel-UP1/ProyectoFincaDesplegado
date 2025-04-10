@@ -152,45 +152,6 @@
     <div class="footer">© 2025 Casa de la Cabra. Todos los derechos reservados.</div>
   </div>
 
-  <script>
-    async function iniciarSesion() {
-      const usuario = document.getElementById('usuario').value;
-      const contraseña = document.getElementById('contraseña').value;
-
-      try {
-        const res = await fetch('/api/login', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ usuario, contraseña })
-        });
-
-        const data = await res.json();
-        const mensajeDiv = document.getElementById('mensaje');
-
-        if (res.ok) {
-          // Guardar datos en localStorage
-          localStorage.setItem('usuario', data.usuario);
-          localStorage.setItem('nombre', data.nombre);
-          localStorage.setItem('rol', data.rol);
-
-          // Redirigir al nuevo puerto
-          setTimeout(() => {
-            window.location.href = '/chivosList.html';
-            //window.location.href = 'http://localhost:8081/chivosList.html';
-          }, 200); // 200 milisegundos
-
-        } else {
-          mensajeDiv.innerHTML = `<span>${data.mensaje}</span>`;
-        }
-      } catch (error) {
-        console.error('Error:', error);
-        document.getElementById('mensaje').innerText = 'Error al conectar con el servidor.';
-      }
-    }
-  </script>
-
-<div id="mensaje" style="color: red; margin-top: 1rem; display: none;">Credenciales incorrectas. Por favor, inténtalo de nuevo.</div>
-
 <script>
   async function iniciarSesion() {
     const usuario = document.getElementById('usuario').value;
@@ -208,7 +169,9 @@
 
       if (res.ok) {
         // Redirigir al dashboard si las credenciales son correctas
-        window.location.href = res.redirect('gestionanimal.com');
+        //window.location.href = res.redirect('http://gestionanimal-production.up.railway.app');
+        window.location.href = 'https://gestionanimal-production.up.railway.app';
+
       } else {
         // Mostrar mensaje de error si las credenciales no coinciden
         mensajeDiv.textContent = 'Credenciales incorrectas. Por favor, inténtalo de nuevo.';

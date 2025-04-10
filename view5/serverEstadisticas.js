@@ -5,24 +5,32 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 // Importa las rutas de chivos
-import chivosRoutes from '../routes/chivosRoutes.mjs';
+import chivosRoutes from './routes/chivosRoutes.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Cargar variables de entorno
-dotenv.config({ path: '../.env' });
+//dotenv.config({ path: '../.env' });
+
+
+const uri = 'mongodb+srv://nuncho:nuncho12@cluster0.g63qsew.mongodb.net/fincaFacil?retryWrites=true&w=majority&appName=Cluster0';
 
 const app = express();
 const PORT = 8084;
 
 // Conectarse a MongoDB
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect(uri)
   .then(() => console.log('✅ Conexión a MongoDB desde serverBienvenida exitosa'))
   .catch((error) => console.error('❌ Error al conectar a MongoDB:', error.message));
 
 // Servir archivos estáticos (como bienvenida.html)
 app.use(express.static(path.join(__dirname)));
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'estadisticas.html'));
+});
+
 
 // Usar las rutas importadas
 app.use('/', chivosRoutes);

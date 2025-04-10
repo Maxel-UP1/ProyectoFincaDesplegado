@@ -12,6 +12,12 @@ const PORT = 8082;
 // Servir la carpeta view3 donde estará saludAnimal.html
 app.use(express.static(path.join(__dirname)));
 
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'saludAnimal.html'));
+});
+
+
 console.log('Ruta absoluta a view3:', path.join(__dirname));
 
 app.listen(PORT, () => {

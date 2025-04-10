@@ -2,34 +2,34 @@
     "services": [
       {
         "name": "login",
-        "rootDir": "main",
+        "rootDir": ".",
         "startCommand": "npm start",
         "envVars": {
           "MONGODB_URI": "string"
         }
       },
       {
-        "name": "chivos",
+        "name": "gestionAnimal",
         "rootDir": "view2",
-        "startCommand": "npm start",
+        "startCommand": "node chivosList.js",
         "envVars": {
           "MONGODB_URI": "string"
         }
       },
       {
-        "name": "salud-animal",
+        "name": "saludAnimal",
         "rootDir": "view3",
-        "startCommand": "npm start"
+        "startCommand": "node serverSaludAnimal.js"
       },
       {
         "name": "reproduccion",
         "rootDir": "view4",
-        "startCommand": "npm start"
+        "startCommand": "node serverReproduccion.js"
       },
       {
         "name": "estadisticas",
         "rootDir": "view5",
-        "startCommand": "npm start",
+        "startCommand": "node serverEstadisticas.js",
         "envVars": {
           "MONGODB_URI": "string"
         }

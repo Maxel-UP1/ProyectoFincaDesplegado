@@ -1,9 +1,9 @@
 {
     "name": "chivos-service",
     "version": "1.0.0",
-    "main": "serverBienvenida.js",
+    "main": "chivosList.js",
     "scripts": {
-      "start": "node serverBienvenida.js"
+      "start": "node chivosList.js"
     },
     "type": "module",
     "dependencies": {

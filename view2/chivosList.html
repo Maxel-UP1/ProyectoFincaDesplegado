@@ -228,7 +228,7 @@
         const vacunaCorrespondiente = enfermedadAleatoria ? enfermedadesVacunas[enfermedadAleatoria] : null;
 
         // Construir la URL con los parámetros
-        let url = `http://localhost:8082/saludAnimal.html`;
+        let url = `https://saludanimal-production.up.railway.app`;
         if (vacunaCorrespondiente) {
             url += `?vacuna=${encodeURIComponent(vacunaCorrespondiente)}`;
         }
@@ -246,12 +246,12 @@
         function redirigirReproduccion() {
             const index = document.getElementById('selectChivos').value;
             setTimeout(() => {
-                window.location.href = 'http://localhost:8083/reproduccion.html';
+                window.location.href = 'https://reproduccion-production.up.railway.app';
             }, 200); // 200 milisegundos
         }
 
         function redirigirEstadisticas() {
-        window.location.href = 'http://localhost:8084/estadisticas.html';
+        window.location.href = 'http://estadisticas-production-b86e.up.railway.app';
     }
 
         window.onload = cargarChivos;
